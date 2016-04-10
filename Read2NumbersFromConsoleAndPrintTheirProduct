@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scannerInput = new Scanner(System.in);
+        double firstDoubleInputValue = 0.0;
+        double secondDoubleInputValue = 0.0;
+        while (true) {
+            System.out.println("Enter first number:");
+            String input = scannerInput.next();
+            try {
+                firstDoubleInputValue = Double.parseDouble(input);
+                System.out.println("The first number you entered is: "
+                        + firstDoubleInputValue);
+                break;
+            } catch (NumberFormatException ne) {
+                System.out.println("Input is not a number, try again");
+            }
+        }
+
+        while (true) {
+            System.out.println("Enter second number:");
+            String input = scannerInput.next();
+            try {
+                secondDoubleInputValue = Double.parseDouble(input);
+                System.out.println("The second number you entered is: "
+                        + secondDoubleInputValue);
+                break;
+            } catch (NumberFormatException ne) {
+                System.out.println("Input is not a number, try again");
+            }
+        }
+        System.out.println("The product of first and second number is :"
+                + (firstDoubleInputValue*secondDoubleInputValue));
+    }
+}
